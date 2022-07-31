@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) =>{
-    sequelize.define('activites',{
+    sequelize.define('activity',{
         nombre: {
             type: DataTypes.STRING,
             allowNull: false,
