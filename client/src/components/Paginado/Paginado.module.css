@@ -1,0 +1,29 @@
+.paginado{
+    display: inline-block;
+    padding: 0;
+    margin: 35px 0 0 150px;
+    overflow: hidden;
+}
+
+.paginadoli{
+    display: inline;
+}
+
+.paginadoa{
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.paginadoa .paginadoa.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.paginadoa:hover:not(.active){
+    background-color: #ddd;
+}

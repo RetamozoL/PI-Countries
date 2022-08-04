@@ -1,9 +1,11 @@
 import './App.css';
+import Router from './Router'
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Countries</h1>
+    <div>
+      <Router />
     </div>
   );
 }

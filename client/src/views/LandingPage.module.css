@@ -1,0 +1,43 @@
+.container {
+    background-image:url("../mapa.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120rem;
+    background-attachment: fixed;
+    height: 59rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonhome {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #DDDDDD;
+    font-family: Open Sans;
+    font-size: 81px;
+    font-weight: 100;
+    padding: 49px;
+    background-color: rgba(255, 255, 255, 0%);
+    -webkit-box-shadow: -1px 1px 39px 9px #000000;
+    -moz-box-shadow: -1px 1px 39px 9px #000000;
+    box-shadow: -1px 1px 39px 9px #000000;
+    text-shadow: 11px 1px 10px #000000;
+    border: solid #000000 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.buttonhome:hover {
+    transition: all;
+    transition-duration: 600ms;
+    background: rgba(129, 129, 129, 50%);
+    border: solid #000000 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
