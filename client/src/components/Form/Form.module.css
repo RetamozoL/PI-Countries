@@ -1,0 +1,67 @@
+.all{
+    
+    background-image: url("./355538.jpg");
+    background-repeat: no-repeat;
+    height: 980px;
+    
+}
+
+.containerall{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    height: 85vh;
+    background-color: #ccc;
+    width: 42%;
+    border-radius: 25px;
+    margin-right: 2.5rem;
+    padding: 2rem;
+    border-style: double;
+    margin-left: 33.5rem;
+  }
+
+.formcontainer{
+    width: 100%;
+    height: 98vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputitem{
+    margin-left: 200px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 535px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+}
+.inputnombre{
+    display: flex;
+    }
+
+.labeldificultad{
+    display: flex;
+    height: 35px;
+}
+.selectdificultad{
+    display:flex ;
+}
+
+.inputduracion{
+    display: flex;
+}
+
+.selecttemporada{
+    display: flex;
+}
+.selectpaises{
+    display: flex;
+}
+
+.errors{
+    color: red;
+}

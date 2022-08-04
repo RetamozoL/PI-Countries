@@ -1,0 +1,14 @@
+.all{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.button{
+    font-size: 30px;
+    border-radius: 8px;
+}
+.button:hover{
+    
+    background-color: lightslategrey;
+    color: aliceblue;
+}

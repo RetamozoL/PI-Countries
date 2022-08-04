@@ -1,0 +1,14 @@
+.fondo{
+    height:100%;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    background-color: #ccc;
+    min-height: 200vh; 
+}
+
+.div{
+    height:22vh;
+    margin:0;
+    background-color: #767575;
+}
