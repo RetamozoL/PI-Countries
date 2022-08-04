@@ -28,9 +28,10 @@ async function cargarBD(){
     const api = await axios.get("https://restcountries.com/v3/all");
     
     let formatear = api.data.map(pais => {
+        const name = pais.name.common[0] === 'Å' ? pais.name.common.replace('Å','A') : pais.name.common
         return {
             id: pais.cca3,
-            name: pais.name.common,
+            name,
             img: pais.flags[0],
             region: pais.continents[0],
             capital: pais.capital ? pais.capital[0] : "Not Found",

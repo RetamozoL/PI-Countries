@@ -6,7 +6,7 @@ const axios = require("axios");
 //mis tablas de la db
 const { Country, Activity } = require("../db.js");
 
-const { Op } = require("sequelize");
+const { Op, Sequelize } = require("sequelize");
 
 
 
@@ -28,54 +28,45 @@ const router = Router();
 
 router.get("/countries", async (req, res) => {
     try {
-        //{ inclde: [{ model: Activity}]} poner adentro del findAll
-        const paisesDB = await Country.findAll()
-        let aux = paisesDB.map((pais) => {
-            const obj = {
-                id: pais.id,
-                img: pais.img,
-                name: pais.name,
-                continente: pais.region
-            }
-            return obj;
-        })
-    res.json(aux)
+        const {name} = req.query
+        if(name){
+            const  paisesDB = await Country.findAll({
+                where: {
+                    name: {[Sequelize.Op.iLike]: `%${name}%`}
+                },
+                include: [{model: Activity}]
+            })
+            let aux = paisesDB.map((pais) => {
+                const obj = {
+                    id: pais.id,
+                    img: pais.img,
+                    name: pais.name,
+                    continente: pais.region,
+                    poblacion: pais.population,
+                    activities: pais.activities
+                }
+                return obj;         
+            })
+            return paisesDB ? res.json(aux) : res.sendStatus(404)
+        }
+        else {
+            const paisesDB = await Country.findAll({include: [{model: Activity}]})
+            let aux = paisesDB.map((pais) => {
+                const obj = {
+                    id: pais.id,
+                    img: pais.img,
+                    name: pais.name,
+                    continente: pais.region,
+                    poblacion: pais.population,
+                    activities: pais.activities
+                }
+                return obj;
+            })
+            return res.json(aux)
+        }
     } catch (error) {
         return res.status(500).json({message: error.message})
     }
-
-    // const name = req.query.name
-    // const apiCountries = await data()
-
-    // try {
-    //     let hay = await Country.findAll();
-    //     if(!hay.length) await Country.bulkCreate(apiCountries)
-    //     res.json(Country)
-
-    // } catch (error) {
-    //     console.log(error);
-    // }
-
-    // if (name){
-    //     try {
-    //         let char = await Country.findAll({
-    //             where: {
-    //                 name: {
-    //                     [Op.iLike]: '%' + name + '%'
-    //                 }
-    //             }
-    //         })
-    //         return res.json(char)
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // } else if (req.query.filter){
-    //     try {
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
-
 })
 
 
@@ -121,7 +112,7 @@ router.post("/activities", async (req, res) => {
             duracion, 
             temporada
         })
-        const agregarCountry = await Country.findOne({
+        const agregarCountry = await Country.findAll({
             where: {
                 id: idPais,
             }
@@ -130,6 +121,18 @@ router.post("/activities", async (req, res) => {
         res.sendStatus(201)
     } catch (error) {
         return res.status(500).json({message: error.message})
+    }
+})
+
+
+router.get('/activities', async (req, res) => {
+    try {
+            const activities = await Activity.findAll({  
+                include: Country  
+                })
+                return res.json(activities) 
+    } catch (error) {
+        res.send(error)
     }
 })
 
