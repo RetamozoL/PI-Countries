@@ -2,6 +2,7 @@
     display: flex;
     justify-content: flex-end;
     text-decoration: none;
+    height: 6rem;
 }
 .menu {
     width: 100%;
@@ -10,8 +11,10 @@
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     text-decoration: none;
+    padding: 1.5rem 8rem 0 8rem;
 }
 .titulo {
     color: #fff;
@@ -19,29 +22,24 @@
     padding: 25px 0 0 10px;
     margin: 0;
     display: flex;
-    justify-content: center;
 }
 
 .fondo {
     background-color: #000;
-    
 }
 .menu li{
-    display: inline-block;
-    
+    display: flex;
+    justify-content: end;
 }
 .menu li a {
-    padding: 2rem 20px;
-    display: inline-block;
     color: #fff;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 26px;
 }
 .menu li a:hover{
     transition: all;
     transition-duration: 300ms;
-    background: #ccc;
-    color:#000
+    color:gray
 }
 
 

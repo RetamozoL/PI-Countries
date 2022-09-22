@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import BotonVolver from '../BotonVolver/BotonVolver'
 import axios from 'axios'
@@ -18,8 +17,6 @@ export default function Form(){
         idPais: []
     })
     const [errors, setErrors] = useState({});
-    
-    const [errorBoton, setErrorBoton] = useState();
     
     const allCountries = useSelector((state) => state.paises)
 
@@ -118,14 +115,8 @@ export default function Form(){
         } else{ window.alert("Alguno de los campos esta vacio")}   
     }
     
-    function handleDelete(el){
-        setActividad({
-            ...actividad,
-            idPais: actividad.idPais.filter( id => id !== el)
-        })
-    }
 
-    const delCountry = (e) => {
+    const handleDelete = (e) => {
         let country = actividad.idPais.filter((c) => c !== e.target.value);
         setActividad({
             ...actividad,
@@ -211,7 +202,7 @@ export default function Form(){
                                 actividad.idPais.map((c) => (
                                     <tr key={c}>
                                     <td>{c}</td>
-                                    <td><button onClick={delCountry} 
+                                    <td><button onClick={handleDelete} 
                                     value={c}>Remove</button></td>
                                     </tr>
                                 ))}

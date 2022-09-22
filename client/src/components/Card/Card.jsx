@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Card.module.css'
 
-export default function Card({name, img, region}){
+export default function Card({name, img, region, poblacion}){
     return(
         <div className={style.body}>
             <div className={style.container}>
@@ -9,6 +9,7 @@ export default function Card({name, img, region}){
                     <img  className={style.imagen} src={img} alt="flag" />
                     <h3 className={style.nombre}> {name} </h3>
                     <h5 className={style.region}>{region}</h5>
+                    <h5 className={style.region}>{poblacion}</h5>
                 </div>  
             </div>
         </div>

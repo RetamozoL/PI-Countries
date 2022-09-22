@@ -61,47 +61,50 @@ export default function AllCards(){
         dispatch(filtrarPaisPorActividad(e.target.value))
     }
 
+    console.log(estadoPais);
+
     return (
         <div>
             <nav>
                 <div className={style.search}>
                     <SearchBar/>
                 </div>
-                    <div className={style.div1}> 
-                        <label className={style.labelnombre}>Filtrar por nombre</label>
-                        <select className={style.selectnombre} onChange={e => handleSort(e)}>
-                            <option value='asc'>A-Z</option>
-                            <option value='desc'>Z-A</option>
-                        </select> 
-                        
-                        <label className={style.labelpoblacion}>Filtrar por poblacion</label>
-                        <select className={style.selectpoblacion} onChange={e => handleSortPopulation(e)}>
-                            <option value='asc'>Ascendente</option>
-                            <option value='desc'>Descendente</option>
-                        </select> 
-                        
-                    </div>
-                    <div className={style.div2}>
-                        <label className={style.labelcontinente}>Filtrar por continente</label>
-                        <select className={style.selectcontinente} onChange={e => handleFilterContinent(e)}>
-                            <option value='all'>Filtrar por continente</option>
-                            <option value='North America'>North America</option>
-                            <option value='South America'>South America</option>
-                            <option value='Europe'>Europa</option>
-                            <option value='Africa'>Africa</option>
-                            <option value='Asia'>Asia</option>                          
-                            <option value='Oceania'>Oceania</option>
-                            <option value='Antarctica'>Antarctica</option>
-                        </select>
-                        <label className={style.labelactividad}>Filtrar por Actividad</label>
-                        <select className={style.selectactividad} onChange={handlefilteredByActivity}> 
-                            <option value='all'>Filtrar Por Actividades</option>
-                            {actividades.map((act) => (
-                                <option key={act.id} value={act.nombre}>{act.nombre}</option>
-                        ))}
-                        </select> 
-                    </div>
-                
+                    <div className={style.filtros}>
+                        <div className={style.div1}> 
+                            <label className={style.labelnombre}>Filtrar por nombre</label>
+                            <select className={style.selectnombre} onChange={e => handleSort(e)}>
+                                <option value='asc'>A-Z</option>
+                                <option value='desc'>Z-A</option>
+                            </select> 
+                            
+                            <label className={style.labelpoblacion}>Filtrar por poblacion</label>
+                            <select className={style.selectpoblacion} onChange={e => handleSortPopulation(e)}>
+                                <option value='asc'>Ascendente</option>
+                                <option value='desc'>Descendente</option>
+                            </select> 
+                            
+                        </div>
+                        <div className={style.div2}>
+                            <label className={style.labelcontinente}>Filtrar por continente</label>
+                            <select className={style.selectcontinente} onChange={e => handleFilterContinent(e)}>
+                                <option value='all'>Filtrar por continente</option>
+                                <option value='North America'>North America</option>
+                                <option value='South America'>South America</option>
+                                <option value='Europe'>Europa</option>
+                                <option value='Africa'>Africa</option>
+                                <option value='Asia'>Asia</option>                          
+                                <option value='Oceania'>Oceania</option>
+                                <option value='Antarctica'>Antarctica</option>
+                            </select>
+                            <label className={style.labelactividad}>Filtrar por Actividad</label>
+                            <select className={style.selectactividad} onChange={handlefilteredByActivity}> 
+                                <option value='all'>Filtrar Por Actividades</option>
+                                {actividades.map((act) => (
+                                    <option key={act.id} value={act.nombre}>{act.nombre}</option>
+                            ))}
+                            </select> 
+                        </div>
+                    </div>            
                 <div>
                     <button className={style.reset} onClick={e=>{handleClick(e)}}>
                         RESETEAR
@@ -114,11 +117,13 @@ export default function AllCards(){
                     countriesPerPage = {countriesPerPage}
                     estadoPais = {estadoPais.length}
                     paginado = {paginado}
+                    setCurrentPage = {setCountriesPerPage}
+                    currentPage = { currentPage}
                 />
             <div className={style.contenedor}>
                 {currentCountries.length > 0 ? currentCountries.map(pais => 
                     <Link className={style.link} key={pais.id} to={`/detail/${pais.id}`}>
-                        <Card name={pais.name} img={pais.img} region={pais.continente} />
+                        <Card name={pais.name} img={pais.img} region={pais.continente} poblacion={pais.poblacion} />
                     </Link>
                 ) : <h2>No hay nada</h2>}
             </div>
