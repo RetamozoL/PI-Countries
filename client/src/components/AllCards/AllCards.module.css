@@ -49,23 +49,18 @@
 }
 
 .labelnombre {
-    display: flex; 
     color: #fff;
-    margin-top: 20px;
 }
 
 .selectpoblacion{
-    
     display: flex;
-    background-color: #fff;
     border-radius:  3px;
-    border: 2px solid black;
+    border: 2px solid black; 
     outline: none;
 }
 
 .labelpoblacion {
     color: #fff;
-    
 }
 
 .selectcontinente{
@@ -78,7 +73,6 @@
 
 .labelcontinente {
     color: #fff;
-    
 }
 
 .selectactividad {
@@ -87,28 +81,21 @@
     border-radius:  3px;
     border: 2px solid black;
     outline: none;
-    
 }
 
 .labelactividad {
     color: #fff;
 }
-
-.div1{
-    position: absolute;
-    margin: 0px 0px 0px 50px;
+.filtros{
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    gap: 10rem;
+    margin-left: 6rem;
 }
-
-.div2{
-    margin: 20px 0 0px 400px;
-    height: 30px;
-    padding: 0 0 0 0;
-}
-
 
 .search{
     display: flex;
-    align-items: center;
-    padding: 5px;
-    padding-left: 720px;
+    justify-content: center;
 }
+
