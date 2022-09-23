@@ -1,18 +1,55 @@
 .button2 {
-    color: white;
-    background-color: black;
-    border-color: white;
     font-family: inherit;
-    width: 8em;
-    height: 2.6em;
-    line-height: 2.5em;
-    margin: 20px;
-    position: relative;
-    border: 2px solid;
-    z-index: 1;
-    font-size: 16px;
-    border-radius: 6px;
+    padding: 0.6em 1em;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
     font-weight: 500;
-   }
-   
+    color:white;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    border: solid 1px;
+    border-color: white;
+}
 
+.button2:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
+}
+
+.button2:active {
+    transform: translateY(2px);
+}
+
+.search{
+    max-width: 169px;
+}
+
+.search  {
+    width: 100%;
+    height: 34px;
+    line-height: 28px;
+    padding-left: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+
+.search::placeholder {
+    color: #9e9ea7;
+    font-size: 1rem;
+}
+
+.search:focus, .search:hover {
+    outline: none;
+    border-color: rgba(115,115,118,0.8);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
