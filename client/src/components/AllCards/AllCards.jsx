@@ -4,7 +4,6 @@ import Card from '../Card/Card.jsx';
 import { Link } from 'react-router-dom';
 import { obtenerPaises, filtrarPaisPorContinente, filtrarPaisPorNombre, filtrarPaisPorActividad, obtenerActividades, filtrarPaisPorPoblacion } from '../../redux/actions'
 import Paginado from '../Paginado/Paginado';
-import SearchBar from '../SearchBar/SearchBar.jsx';
 import style from './AllCards.module.css'
 
 export default function AllCards(){
@@ -66,9 +65,6 @@ export default function AllCards(){
     return (
         <div>
             <nav>
-                <div className={style.search}>
-                    <SearchBar/>
-                </div>
                     <div className={style.filtros}>
                         <div className={style.div1}> 
                             <label className={style.labelnombre}>Filtrar por nombre</label>
