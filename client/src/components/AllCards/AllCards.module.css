@@ -1,9 +1,6 @@
 .contenedor {
-    margin: 0;
-    padding: 150px 0 0 0;
-    width: 1800px;
-    max-width: 2000px;
-    height: 430px;
+    margin: 0px 0px 0px 0px ;
+    padding: 120px 0 0 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -12,7 +9,6 @@
 }
 .paginado{
     display: flex;
-    height: 100vh;
 }
 
 .link{
@@ -20,23 +16,22 @@
 }
 
 .reset{
-    position: relative;
-    margin-top: 90px;
-    margin-left: 50px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    color: #DDDDDD;
-    font-family: Open Sans;
-    font-size: 15px;
-    font-weight: 100;
-    background-color: rgba(255, 255, 255, 0%);
-    text-shadow: 11px 1px 10px #000000;
-    border: solid #000000 1px;
+    font-family: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color:white;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
 }
 .reset:hover{
-    background-color: #fff;
-    color: #000000;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
 }
 
 .selectnombre{
@@ -46,10 +41,13 @@
     border-radius:  3px;
     border: 2px solid black;
     outline: none;
+    font-size: 14px;
+    width: 166px;
 }
 
 .labelnombre {
-    color: #fff;
+    color: black;
+    padding-left: 2px;
 }
 
 .selectpoblacion{
@@ -57,10 +55,13 @@
     border-radius:  3px;
     border: 2px solid black; 
     outline: none;
+    font-size: 14px;
+    width: 166px;
 }
 
 .labelpoblacion {
-    color: #fff;
+    color: black;
+    padding-left: 2px;
 }
 
 .selectcontinente{
@@ -69,29 +70,39 @@
     border-radius:  3px;
     border: 2px solid black;
     outline: none;
+    font-size: 14px;
+    width: 166px;
 }
 
 .labelcontinente {
-    color: #fff;
+    color: black;
+    padding-left: 2px;
 }
 
 .selectactividad {
     display: flex;
     background-color: #fff;
-    border-radius:  3px;
+    border-radius:3px;
     border: 2px solid black;
     outline: none;
+    width: 166px;
 }
 
 .labelactividad {
-    color: #fff;
+    color: black;
+    padding-left: 2px;
 }
 .filtros{
     display: flex;
     flex-direction: row;
-    justify-content:start;
-    gap: 10rem;
-    margin-left: 6rem;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    font-size: 1.3rem;
+    gap: 1rem;
+}
+select{
+    width: 100%;
 }
 
 .search{

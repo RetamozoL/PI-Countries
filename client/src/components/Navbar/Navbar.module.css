@@ -37,11 +37,12 @@
     color: #fff;
     text-decoration: none;
     font-size: 26px;
+    border-radius: 10px;
 }
 .menu li a:hover{
     transition: all;
     transition-duration: 300ms;
-    color:gray
+    color:gray;
 }
 
 
