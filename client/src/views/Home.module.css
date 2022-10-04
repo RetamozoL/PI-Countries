@@ -4,11 +4,6 @@
     display: flex;
     flex-direction: column;
     background-color: #ccc;
-    min-height: 200vh; 
+    min-height: 160vh; 
 }
 
-.div{
-    height:22vh;
-    margin:0;
-    background-color: #767575;
-}

@@ -66,21 +66,21 @@ export default function AllCards(){
         <div>
             <nav>
                     <div className={style.filtros}>
-                        <div className={style.div1}> 
+                        <div> 
                             <label className={style.labelnombre}>Filtrar por nombre</label>
                             <select className={style.selectnombre} onChange={e => handleSort(e)}>
                                 <option value='asc'>A-Z</option>
                                 <option value='desc'>Z-A</option>
-                            </select> 
-                            
+                            </select>
+                        </div>
+                        <div>
                             <label className={style.labelpoblacion}>Filtrar por poblacion</label>
                             <select className={style.selectpoblacion} onChange={e => handleSortPopulation(e)}>
                                 <option value='asc'>Ascendente</option>
                                 <option value='desc'>Descendente</option>
                             </select> 
-                            
                         </div>
-                        <div className={style.div2}>
+                        <div>
                             <label className={style.labelcontinente}>Filtrar por continente</label>
                             <select className={style.selectcontinente} onChange={e => handleFilterContinent(e)}>
                                 <option value='all'>Filtrar por continente</option>
@@ -92,6 +92,8 @@ export default function AllCards(){
                                 <option value='Oceania'>Oceania</option>
                                 <option value='Antarctica'>Antarctica</option>
                             </select>
+                        </div>
+                        <div>                       
                             <label className={style.labelactividad}>Filtrar por Actividad</label>
                             <select className={style.selectactividad} onChange={handlefilteredByActivity}> 
                                 <option value='all'>Filtrar Por Actividades</option>
@@ -100,13 +102,10 @@ export default function AllCards(){
                             ))}
                             </select> 
                         </div>
+                        <button className={style.reset} onClick={e=>{handleClick(e)}}>
+                            RESETEAR FILTROS
+                        </button>   
                     </div>            
-                <div>
-                    <button className={style.reset} onClick={e=>{handleClick(e)}}>
-                        RESETEAR
-                    </button>    
-                </div>
-                
             </nav>
             <Paginado 
                     className={style.paginado}
@@ -123,6 +122,14 @@ export default function AllCards(){
                     </Link>
                 ) : <h2>No hay nada</h2>}
             </div>
+            <Paginado 
+                    className={style.paginado}
+                    countriesPerPage = {countriesPerPage}
+                    estadoPais = {estadoPais.length}
+                    paginado = {paginado}
+                    setCurrentPage = {setCountriesPerPage}
+                    currentPage = { currentPage}
+                />
         </div>
     )
 }
