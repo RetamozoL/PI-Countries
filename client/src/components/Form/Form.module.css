@@ -65,3 +65,11 @@
 .errors{
     color: red;
 }
+
+.paises{
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    overflow-y: scroll;
+    width:300px;
+}

@@ -197,13 +197,13 @@ export default function Form(){
                                     <th>para agregar</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className={style.paises}>
                                 {actividad.idPais &&
                                 actividad.idPais.map((c) => (
                                     <tr key={c}>
                                     <td>{c}</td>
                                     <td><button onClick={handleDelete} 
-                                    value={c}>Remove</button></td>
+                                    value={c}>Eliminar</button></td>
                                     </tr>
                                 ))}
                             </tbody>
