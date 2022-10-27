@@ -83,7 +83,7 @@ export default function AllCards(){
                         <div>
                             <label className={style.labelcontinente}>Filtrar por continente</label>
                             <select className={style.selectcontinente} onChange={e => handleFilterContinent(e)}>
-                                <option value='all'>Filtrar por continente</option>
+                                <option value='all'>Seleccione el contiente</option>
                                 <option value='North America'>North America</option>
                                 <option value='South America'>South America</option>
                                 <option value='Europe'>Europa</option>
@@ -96,7 +96,7 @@ export default function AllCards(){
                         <div>                       
                             <label className={style.labelactividad}>Filtrar por Actividad</label>
                             <select className={style.selectactividad} onChange={handlefilteredByActivity}> 
-                                <option value='all'>Filtrar Por Actividades</option>
+                                <option value='all'>Seleccione la actividad</option>
                                 {actividades.map((act) => (
                                     <option key={act.id} value={act.nombre}>{act.nombre}</option>
                             ))}

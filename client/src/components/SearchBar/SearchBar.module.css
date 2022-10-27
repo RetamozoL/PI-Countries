@@ -10,14 +10,14 @@
     text-transform: uppercase;
     letter-spacing: 2.5px;
     font-weight: 500;
-    color:white;
-    background-color: black;
+    color:#ECECEC;
+    background-color: #1A1A1A;
     border-radius: 10px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;
     border: solid 1px;
-    border-color: white;
+    border-color: #ECECEC;
 }
 
 .button2:hover {
@@ -30,19 +30,15 @@
     transform: translateY(2px);
 }
 
-.search{
-    max-width: 169px;
-}
-
 .search  {
-    width: 100%;
+    width: 18rem;
     height: 39px;
     line-height: 28px;
     padding-left: 0.5rem;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 8px;
     outline: none;
-    background-color: #f3f3f4;
+    background-color: #ECECEC;
     color: #0d0c22;
     transition: .3s ease;
 }
@@ -55,7 +51,6 @@
 .search:focus, .search:hover {
     outline: none;
     border-color: rgba(115,115,118,0.8);
-    background-color: #E0E0E0;
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
     
 }

@@ -3,10 +3,14 @@
     justify-content: flex-end;
     text-decoration: none;
     height: 6rem;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .menu {
     width: 100%;
-    background: #000;
+    background: #1A1A1A;
     list-style:none;
     margin: 0;
     padding: 0;
@@ -17,8 +21,8 @@
     padding: 0 6rem 0 6rem;
 }
 .titulo {
-    color: #fff;
-    background-color: #000;
+    color: #ECECEC;
+    background-color: #1A1A1A;
     align-items:center;
     padding-left: 1rem;
     margin: 0;
@@ -34,7 +38,7 @@
     align-items:center ;
 }
 .menu li a {
-    color: #fff;
+    color: #ECECEC;
     text-decoration: none;
     font-size: 26px;
     border-radius: 10px;
