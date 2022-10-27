@@ -6,6 +6,7 @@
     justify-content: center;
     margin: auto;
     gap: 5rem;
+    
 }
 .paginado{
     display: flex;
@@ -15,89 +16,141 @@
     text-decoration: none;
 }
 
+select{
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+}
+
 .reset{
     font-family: inherit;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2.5px;
     font-weight: 500;
-    color:white;
-    background-color: black;
+    color:#ECECEC;
+    background-color: #1A1A1A;
     border-radius: 10px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;
+    border: 1px solid yellow;
+    padding: 6px;
 }
 .reset:hover{
-    background-color: #ccc;
+    background-color: yellow;
     color: black;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
 }
 
 .selectnombre{
-    
     display: flex;
-    background-color: #fff;
+    background-color: #1A1A1A;
     border-radius:  3px;
-    border: 2px solid black;
+    border: 2px solid transparent;
     outline: none;
-    font-size: 14px;
+    font-size: 1rem;
     width: 166px;
+    color: #A9A9A9;
+    transition: all 0.2s ease 0s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.selectnombre:hover,
+.selectnombre:focus{
+    color: #ECECEC;
+    border: 2px solid yellow;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
 }
 
 .labelnombre {
-    color: black;
-    padding-left: 2px;
+    color: #ECECEC;
+    padding-left: 4px;
+    border: 2px solid transparent;
 }
 
 .selectpoblacion{
     display: flex;
+    background-color: #1A1A1A;
     border-radius:  3px;
-    border: 2px solid black; 
+    border: 2px solid transparent;
     outline: none;
-    font-size: 14px;
+    font-size: 1rem;
     width: 166px;
+    color: #A9A9A9;
+    transition: all 0.2s ease 0s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+.selectpoblacion:hover,
+.selectpoblacion:focus{
+    color: #ECECEC;
+    border: 2px solid yellow;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
 }
 
 .labelpoblacion {
-    color: black;
-    padding-left: 2px;
+    color: #ECECEC;
+    padding-left: 4px;
+    border: 2px solid transparent;
 }
 
 .selectcontinente{
     display: flex;
-    background-color: #fff;
+    background-color: #1A1A1A;
     border-radius:  3px;
-    border: 2px solid black;
+    border: 2px solid transparent;
     outline: none;
-    font-size: 14px;
+    font-size: 1rem;
     width: 166px;
+    color: #A9A9A9;
+    transition: all 0.2s ease 0s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+.selectcontinente:hover,
+.selectcontinente:focus{
+    color: #ECECEC;
+    border: 2px solid yellow;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
 }
 
+
 .labelcontinente {
-    color: black;
-    padding-left: 2px;
+    color: #ECECEC;
+    padding-left: 4px;
+    border: 2px solid transparent;
 }
 
 .selectactividad {
     display: flex;
-    background-color: #fff;
-    border-radius:3px;
-    border: 2px solid black;
+    background-color: #1A1A1A;
+    border-radius:  3px;
+    border: 2px solid transparent;
     outline: none;
+    font-size: 1rem;
     width: 166px;
+    color: #A9A9A9;
+    transition: all 0.2s ease 0s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+.selectactividad:hover,
+.selectactividad:focus{
+    color: #ECECEC;
+    border: 2px solid yellow;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
 }
 
+
 .labelactividad {
-    color: black;
-    padding-left: 2px;
+    color: #ECECEC;
+    padding-left: 4px;
+    border: 2px solid transparent;
 }
 .filtros{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
     flex-wrap: wrap;
-    padding-top: 2rem;
+    padding-top: 9rem;
     font-size: 1.3rem;
     gap: 1rem;
 }
