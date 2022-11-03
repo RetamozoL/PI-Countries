@@ -5,7 +5,6 @@
     padding: 0;
     overflow: hidden;
     gap: 0.5rem;
-    padding-top: 4.5rem;
 }
 
 .paginadoli{
@@ -13,21 +12,20 @@
 }
 
 .paginadoa{
-    color: black;
-    float: left;
-    text-decoration: none;
+    color: white;
     font-weight: 700;
     font-size: 14px;
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 999px;
+    background-color: transparent;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.25s;
+    border: none;
 }
 
-.paginadoa .paginadoa.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.paginadoa:hover:not(.active){
-    background-color: #ddd;
+.paginadoa:hover{
+    transform: scale(1.4);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
