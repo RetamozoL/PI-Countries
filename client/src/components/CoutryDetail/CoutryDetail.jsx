@@ -27,7 +27,7 @@ export default function CoutryDetail (){
                         <img style={{borderRadius: '50px'}} src={country.img} alt="flag" />
                     </div>
                         <div>
-                            <h2>{country.name}</h2>
+                            <h2 className={style.nombrepais}>{country.name}</h2>
                             <table className={style.table}>
                                 <tbody>
                                     <tr>
@@ -63,13 +63,13 @@ export default function CoutryDetail (){
                 
             }
             <div >
-                <h1>Actividades</h1>
+                <h1 className={style.actividad}>Actividades</h1>
                 {
                     country ?
                     country.activities.length > 0?    
                     country.activities.map((actividad) => (
                         <div >
-                            <h2>{actividad.nombre}</h2>
+                            <h2 className={style.actividadnombre}>{actividad.nombre}</h2>
                             <table className={style.table}>
                                 <tbody>
                                     <tr>
