@@ -37,6 +37,16 @@ export default function AllCards(){
         dispatch(obtenerPaises())     
     }
 
+    function handleNext(e){
+        e.preventDefault();
+        if(currentPage < Math.ceil(estadoPais.length/countriesPerPage))setCurrentPage(currentPage + 1)
+    }
+
+    function handlePrev(e){
+        e.preventDefault();
+        if(currentPage>1) setCurrentPage(currentPage - 1)
+    }
+    
     function handleSort(e) {
         e.preventDefault();
         dispatch(filtrarPaisPorNombre(e.target.value))
@@ -53,11 +63,13 @@ export default function AllCards(){
 
     function handleFilterContinent(e){
         dispatch(filtrarPaisPorContinente(e.target.value));
+        setCurrentPage(1);
     }
 
     function handlefilteredByActivity(e){
         e.preventDefault();
         dispatch(filtrarPaisPorActividad(e.target.value))
+        setCurrentPage(1);
     }
 
     console.log(estadoPais);
@@ -107,7 +119,9 @@ export default function AllCards(){
                         </button>   
                     </div>            
             </nav>
-            <Paginado 
+            <div className={style.paginadoContenedor}>
+                <button className={style.NextPrev} onClick={e=>{handlePrev(e)}}>anterior</button>
+                <Paginado 
                     className={style.paginado}
                     countriesPerPage = {countriesPerPage}
                     estadoPais = {estadoPais.length}
@@ -115,6 +129,8 @@ export default function AllCards(){
                     setCurrentPage = {setCountriesPerPage}
                     currentPage = { currentPage}
                 />
+                <button className={style.NextPrev} onClick={e=>{handleNext(e)}}>siguiente</button>
+            </div>
             <div className={style.contenedor}>
                 {currentCountries.length > 0 ? currentCountries.map(pais => 
                     <Link className={style.link} key={pais.id} to={`/detail/${pais.id}`}>
@@ -122,7 +138,9 @@ export default function AllCards(){
                     </Link>
                 ) : <h2>No hay nada</h2>}
             </div>
-            <Paginado 
+            <div className={style.paginadoContenedor2}>
+                <button className={style.NextPrev} onClick={e=>{handlePrev(e)}}>anterior</button>
+                <Paginado 
                     className={style.paginado}
                     countriesPerPage = {countriesPerPage}
                     estadoPais = {estadoPais.length}
@@ -130,6 +148,8 @@ export default function AllCards(){
                     setCurrentPage = {setCountriesPerPage}
                     currentPage = { currentPage}
                 />
+                <button className={style.NextPrev} onClick={e=>{handleNext(e)}}>siguiente</button>
+            </div>
         </div>
     )
 }
