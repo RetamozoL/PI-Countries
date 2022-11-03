@@ -7,7 +7,7 @@ export default function Detail(){
     return(
         <div className={style.container}>
             <Navbar/>
-            <h1>Pais</h1>
+            <h1 className={style.titulo}>Pais</h1>
             <ContryDetail />
         </div>
     )

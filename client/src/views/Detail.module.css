@@ -1,3 +1,9 @@
 .container {
-    background-color: #ccc;
+    background-color: #1A1A1A;
+    height: 100%;
+}
+
+.titulo{
+    padding-top: 8rem;
+    color: aliceblue;
 }
