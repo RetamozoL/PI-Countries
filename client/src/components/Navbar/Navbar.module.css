@@ -42,11 +42,11 @@
     text-decoration: none;
     font-size: 26px;
     border-radius: 10px;
+    transition: all 0.3s ease 0s;
 }
 .menu li a:hover{
-    transition: all;
-    transition-duration: 300ms;
     color:gray;
+    filter: drop-shadow(0px 14px 6px rgba(255, 255, 255, 40%));
 }
 
 
