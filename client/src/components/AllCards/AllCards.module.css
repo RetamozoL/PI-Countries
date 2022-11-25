@@ -8,9 +8,7 @@
     gap: 5rem;
     
 }
-.paginado{
-    display: flex;
-}
+
 
 .link{
     text-decoration: none;
@@ -41,6 +39,13 @@ select{
     color: black;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
 }
+.reset:active{
+    background-color: yellow;
+    color: black;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(0.8);
+}
+
 
 .selectnombre{
     display: flex;
@@ -187,18 +192,21 @@ select{
     background-color: #1A1A1A;
     border-radius: 10px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all yellow 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
     cursor: pointer;
     border: 1px solid white;
-    padding: 6px;
+    padding: 5px;
+    margin: 0px 1rem;
 }
 .NextPrev:hover{
     background-color: yellow;
     color: black;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    border:1px solid yellow
 }
 .NextPrev:active{
-    background-color: white;
     color: black;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    border:1px solid transparent;
+    transform: scale(0.9);
 }
