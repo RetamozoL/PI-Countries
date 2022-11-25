@@ -1,75 +1,182 @@
 .all{
-    
-    background-image: url("./355538.jpg");
-    background-repeat: no-repeat;
-    height: 980px;
-    
+    background-color: #1A1A1A;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .containerall{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
-    height: 85vh;
-    background-color: #ccc;
-    width: 42%;
-    border-radius: 25px;
-    margin-right: 2.5rem;
-    padding: 2rem;
-    border-style: double;
-    margin-left: 33.5rem;
-  }
+    height: 90vh;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 16px 0 rgba(139, 140, 141, 0.37);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    overflow-y: scroll;
+}
 
 .formcontainer{
-    width: 100%;
-    height: 98vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 2rem;
 }
 
 .inputitem{
-    margin-left: 200px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    width: 535px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 1.5rem;
     align-items: center;
-    justify-content: space-between;
-    font-size: 17px;
-}
-.inputnombre{
-    display: flex;
-    }
-
-.labeldificultad{
-    display: flex;
-    height: 35px;
-}
-.selectdificultad{
-    display:flex ;
-}
-
-.inputduracion{
-    display: flex;
-}
-
-.selecttemporada{
-    display: flex;
-}
-.selectpaises{
-    display: flex;
 }
 
 .errors{
     color: red;
 }
+.errorsFondo{
+    visibility: hidden;
+}
 
 .paises{
     display: flex;
-    flex-wrap: wrap;
-    height: 200px;
+    flex-direction: column;
+    height: 236px;
     overflow-y: scroll;
     width:300px;
+    align-items: center;
+    align-content: center;
+}
+.paises td{
+    width: 3.5rem;
+    text-align:center;
+    align-items: center;
+    align-content: center;
+}
+
+.selectForm{
+    display: flex;
+    background-color: #1A1A1A;
+    border-radius:  8px;
+    border: 2px solid transparent;
+    outline: none;
+    font-size: 1rem;
+    width: 26rem;
+    color: #A9A9A9;
+    transition: all 0.2s ease 0s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    height: 39px;
+}
+.selectForm:hover{
+    color: #ECECEC;
+    border: 2px solid yellow;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
+}
+.inputs  {
+    width: 26rem;
+    height: 39px;
+    line-height: 28px;
+    padding-left: 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #1A1A1A;
+    color: #ECECEC;
+    transition: .3s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.inputs::placeholder {
+    color: #9e9ea7;
+    font-size: 1rem;
+}
+
+.inputs:focus, .inputs:hover {
+    outline: none;
+    border-color: rgba(245, 229, 46, 0.8);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
+}
+
+
+.conteinerDouble{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+.contenedorPais{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+.crear{
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 500;
+    color:#ECECEC;
+    background-color: #1A1A1A;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    border: 2px solid #1A1A1A;
+    padding: 6px;
+}
+.crear:hover{
+    background-color: yellow;
+    color: black;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+}
+.crear:active{
+    background-color: yellow;
+    color: black;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(0.8);
+}
+
+.crearDesactivado{
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 500;
+    color:red;
+    background-color: #1A1A1A;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border: 2px solid #1A1A1A;
+    padding: 6px;
+    pointer-events: none;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #404040;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.eliminar {
+    padding: 0.3rem 0.6rem;
+    color: black;
+    transition: all 0.3s ease 0s;
+    background-color: transparent;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    border: 2px solid #1A1A1A;
+}
+
+.eliminar:hover{
+    background-color: yellow;
+    color: black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
