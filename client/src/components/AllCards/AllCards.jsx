@@ -122,12 +122,11 @@ export default function AllCards(){
             <div className={style.paginadoContenedor}>
                 <button className={style.NextPrev} onClick={e=>{handlePrev(e)}}>anterior</button>
                 <Paginado 
-                    className={style.paginado}
                     countriesPerPage = {countriesPerPage}
                     estadoPais = {estadoPais.length}
                     paginado = {paginado}
                     setCurrentPage = {setCountriesPerPage}
-                    currentPage = { currentPage}
+                    currentPage = {currentPage}
                 />
                 <button className={style.NextPrev} onClick={e=>{handleNext(e)}}>siguiente</button>
             </div>
