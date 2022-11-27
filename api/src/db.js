@@ -71,7 +71,7 @@ Country.belongsToMany(Activity, {
   through : "country_activity"
 });
 
-
+console.log("probando");
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

@@ -53,7 +53,7 @@ async function cargarBD(){
 // Syncing all the models at once.
 conn.sync({ force: true }).then(async() => {
   await cargarBD()
-  server.listen(3001, async () => {
+  server.listen($PORT, async () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
