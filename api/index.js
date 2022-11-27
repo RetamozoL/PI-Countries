@@ -20,6 +20,10 @@
 const axios = require('axios')
 const server = require('./src/app.js');
 const { conn, Country } = require('./src/db.js');
+require('dotenv').config()
+const {
+  PORT
+} = process.env;
 
 async function cargarBD(){
   try {
@@ -53,7 +57,7 @@ async function cargarBD(){
 // Syncing all the models at once.
 conn.sync({ force: true }).then(async() => {
   await cargarBD()
-  server.listen($PORT, async () => {
+  server.listen(PORT, async () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
