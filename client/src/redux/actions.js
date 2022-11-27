@@ -1,4 +1,5 @@
 import axios from 'axios';
+require('dotenv').config()
 
 export const GET_ALL_COUNTRIES = "GET_ALL_COUNTRIES";
 export const GET_COUNTRY = "GET_COUNTRY";
