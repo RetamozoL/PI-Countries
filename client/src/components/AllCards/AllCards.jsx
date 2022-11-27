@@ -135,7 +135,7 @@ export default function AllCards(){
                     <Link className={style.link} key={pais.id} to={`/detail/${pais.id}`}>
                         <Card name={pais.name} img={pais.img} region={pais.continente} poblacion={pais.poblacion} />
                     </Link>
-                ) : <h2>No hay nada</h2>}
+                ) : <h2>Cargando...</h2>}
             </div>
             <div className={style.paginadoContenedor2}>
                 <button className={style.NextPrev} onClick={e=>{handlePrev(e)}}>anterior</button>

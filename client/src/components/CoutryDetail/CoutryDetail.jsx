@@ -6,13 +6,16 @@ import style from './CoutryDetail.module.css'
 
 export default function CoutryDetail (){
 
+    const useDB = axios.create({
+        baseURL: process.env.REACT_APP_BASEURL
+    })
 
     const [country, setCountry] = useState(null)
 
     let { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/countries/${id}`)
+        axios.get(`https://pi-countries.up.railway.app/countries/${id}`)
         .then((respuesta) => {
             setCountry(respuesta.data)
         })
