@@ -109,7 +109,7 @@ export default function Form(){
             actividad.temporada &&
             actividad.idPais
         ){
-        await axios.post("http://localhost:3001/activities", actividad);
+        await axios.post("https://pi-countries.up.railway.app/activities", actividad);
         window.alert("Actividad creada con exito!");
         window.location.reload();
         } else{ window.alert("Alguno de los campos esta vacio")}   
