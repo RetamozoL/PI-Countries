@@ -15,7 +15,7 @@ export default function CoutryDetail (){
     let { id } = useParams();
 
     useEffect(() => {
-        axios.get(`https://pi-countries.up.railway.app/countries/${id}`)
+        useDB.get(`/countries/${id}`)
         .then((respuesta) => {
             setCountry(respuesta.data)
         })
@@ -71,7 +71,7 @@ export default function CoutryDetail (){
                     country ?
                     country.activities.length > 0?    
                     country.activities.map((actividad) => (
-                        <div >
+                        <div key={actividad.id}>
                             <h2 className={style.actividadnombre}>{actividad.nombre}</h2>
                             <table className={style.table2}>
                                 <tbody>

@@ -4,6 +4,7 @@ import BotonVolver from '../BotonVolver/BotonVolver'
 import axios from 'axios'
 import { obtenerPaises } from '../../redux/actions'
 import style from './Form.module.css'
+import { useHistory } from 'react-router';
 
 
 export default function Form(){
@@ -19,6 +20,8 @@ export default function Form(){
     const [errors, setErrors] = useState({});
     
     const allCountries = useSelector((state) => state.paises)
+
+    const history = useHistory();
 
     //Object.keys(erroresFormulario).length < 1 ? false : true
     
@@ -50,6 +53,7 @@ export default function Form(){
             errors.duracion = "Debe ingresar una duracion"
         } else if(!/\d/.test(actividad.duracion)){
             errors.duracion = "Debe ser un numero"
+            console.log(typeof(actividad.duracion));
         } else if(actividad.duracion < 1 || actividad.duracion > 24)
         errors.duracion = "Debe ser un numero entre 1 y 24"
 
@@ -83,6 +87,10 @@ export default function Form(){
             // setErrors(utils.validate({...input, [e.target.name]: e.target.value}))
             setActividad({...actividad, [e.target.name]: [...actividad.idPais, e.target.value]});
         }   
+        setErrors(validar({
+            ...actividad,
+            [e.target.name]:e.target.value
+        }));
     }
 
     function handleTemporadas(e){
@@ -90,6 +98,10 @@ export default function Form(){
             ...actividad,
             temporada:e.target.value
         })
+        setErrors(validar({
+            ...actividad,
+            [e.target.name]:e.target.value
+        }));
     }
 
     function handleDificultad(e){
@@ -97,7 +109,15 @@ export default function Form(){
             ...actividad,
             dificultad:e.target.value
         })
+        setErrors(validar({
+            ...actividad,
+            [e.target.name]:e.target.value
+        }));
     }
+
+    const useDB = axios.create({
+        baseURL: process.env.REACT_APP_BASEURL
+    })
 
     async function handleSubmit(e){
         e.preventDefault()
@@ -109,9 +129,9 @@ export default function Form(){
             actividad.temporada &&
             actividad.idPais
         ){
-        await axios.post("https://pi-countries.up.railway.app/activities", actividad);
+        await useDB.post("/activities", actividad);
         window.alert("Actividad creada con exito!");
-        window.location.reload();
+        history.push('/home')
         } else{ window.alert("Alguno de los campos esta vacio")}   
     }
     

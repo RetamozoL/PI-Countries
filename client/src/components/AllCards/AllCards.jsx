@@ -72,7 +72,6 @@ export default function AllCards(){
         setCurrentPage(1);
     }
 
-    console.log(estadoPais);
 
     return (
         <div>
