@@ -1,5 +1,5 @@
 FROM node:18
-WORKDIR /
-COPY . /
+WORKDIR /api
+COPY . /api
 RUN npm install
 CMD ["npm", "start"]
