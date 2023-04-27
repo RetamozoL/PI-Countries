@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT
+  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT,ENDPOINT_ID
 } = process.env;
 let sequelize =
   process.env.NODE_ENV === "production"
@@ -14,6 +14,7 @@ let sequelize =
         port: DB_PORT,
         username: DB_USER,
         password: DB_PASSWORD,
+        endpoint: ENDPOINT_ID,
         pool: {
           max: 3,
           min: 1,
@@ -29,9 +30,22 @@ let sequelize =
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`,
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${PGDATABASE}?options=project%3D${ENDPOINT_ID}`,
         { logging: false, native: false }
       );
+
+// const postgres = require('postgres');
+
+// const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
+// const URL = `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?options=project%3D${ENDPOINT_ID}`;
+
+// const sql = postgres(URL, { ssl: 'require' });
+
+// async function getPgVersion() {
+//   const result = await sql`select version()`;
+//   console.log(result);
+// }
+
 
 // const sequelize = new Sequelize(
 //   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, 
@@ -41,14 +55,16 @@ let sequelize =
 // });
 const basename = path.basename(__filename);
 
-const modelDefiners = [];
+const activity = require('./models/Activity')
+const country = require('./models/Country')
+const modelDefiners = [activity,country];
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
-fs.readdirSync(path.join(__dirname, '/models'))
-  .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
-  .forEach((file) => {
-    modelDefiners.push(require(path.join(__dirname, '/models', file)));
-  });
+// fs.readdirSync(path.join(__dirname, '/models'))
+//   .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
+//   .forEach((file) => {
+//     modelDefiners.push(require(path.join(__dirname, '/models', file)));
+//   });
 
 // Injectamos la conexion (sequelize) a todos los modelos
 modelDefiners.forEach(model => model(sequelize));
