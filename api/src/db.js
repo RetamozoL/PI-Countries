@@ -54,17 +54,17 @@ let sequelize =
 //   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 // });
 const basename = path.basename(__filename);
-
-const activity = require('./models/Activity')
-const country = require('./models/Country')
-const modelDefiners = [activity,country];
+const modelDefiners = [];
+// const activity = require('./models/Activity')
+// const country = require('./models/Country')
+// const modelDefiners = [activity,country];
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
-// fs.readdirSync(path.join(__dirname, '/models'))
-//   .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
-//   .forEach((file) => {
-//     modelDefiners.push(require(path.join(__dirname, '/models', file)));
-//   });
+fs.readdirSync(path.join(__dirname, '/models'))
+  .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
+  .forEach((file) => {
+    modelDefiners.push(require(path.join(__dirname, '/models', file)));
+  });
 
 // Injectamos la conexion (sequelize) a todos los modelos
 modelDefiners.forEach(model => model(sequelize));
