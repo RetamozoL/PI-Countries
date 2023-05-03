@@ -30,7 +30,8 @@ let sequelize =
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?options=project%3D${ENDPOINT_ID}`,
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`,
+        
         { logging: false, native: false }
       );
 
