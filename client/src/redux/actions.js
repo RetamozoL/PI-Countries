@@ -12,7 +12,8 @@ export const SEARCH_COUNTRIES = "SEARCH_COUNTRIES";
 
 
 const useDB = axios.create({
-    baseURL: process.env.REACT_APP_BASEURL
+    baseURL: process.env.REACT_APP_BASEURL,
+    timeout: 1000,
 })
 
 export const obtenerPaises = () => {
